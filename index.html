@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="res/script.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.0/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./res/style.css">
+    <title>MS Fusion</title>
+  </head>
+  <body>
+    <div class="menu" id="myBtnContainer" >
+        <button onclick="filter('arcane ray')" title="Arcane Ray"><img class="icon normal" src="./img_magic/Ray.jpg"></button>
+        <button onclick="filter('armageddon')" title="Armageddon" > <img class="icon normal" src="./img_magic/Arma.jpg"></button>
+        <button onclick="filter('blizzard')" title="Blizzard"> <img class="icon normal" src="./img_magic/Blizzard.jpg"></button>
+        <button onclick="filter('cyclone')" title="Cyclone"> <img class="icon normal" src="./img_magic/Cyclone.jpg"></button>
+        <button onclick="filter('electric shock')" title="Electric Shock"> <img class="icon normal" src="./img_magic/ElectricShock.jpg"></button>
+        <button onclick="filter('electric zone')" title="Electric Zone"> <img class="icon normal" src="./img_magic/EZone.jpg"></button>
+        <button onclick="filter('energy bolt')" title="Energy Bolt"> <img class="icon normal" src="./img_magic/EnergyBolt.jpg"></button>
+        <button onclick="filter('fireball')" title="Fireball"> <img class="icon normal" src="./img_magic/Fireball.jpg"></button>
+        <button onclick="filter('flash')" title="Flash Shock"> <img class="icon normal" src="./img_magic/FlashShock.jpg"></button>
+        <button onclick="filter('nova')" title="Frost Nova"> <img class="icon normal" src="./img_magic/FrostNova.jpg"></button>
+        <button onclick="filter('incineration')" title="Incineration"><img class="icon normal" src="./img_magic/Incineration.jpg"></button>
+        <button onclick="filter('lava')" title="Lava Zone" ><img class="icon normal" src="./img_magic/LavaZone.jpg"></button>
+        <button onclick="filter('magic bolt')" title="Magic Bolt"><img class="icon normal" src="./img_magic/MagicBolt.jpg"></button>
+        <button onclick="filter('magic circle')" title="Magic Circle"><img class="icon normal" src="./img_magic/MagicCircle.jpg"></button>
+        <button onclick="filter('meteor')" title="Meteor"><img class="icon normal" src="./img_magic/Meteor.jpg"></button>
+        <button onclick="filter('satellite')" title="Satellite"><img class="icon normal" src="./img_magic/Satellite.jpg"></button>
+        <button onclick="filter('shield')" title="Shield"><img class="icon normal" src="./img_magic/Shield.jpg"></button>
+        <button onclick="filter('spirit')" title="Sprit"><img class="icon normal" src="./img_magic/Spirit.jpg"></button>
+        <button onclick="filter('thunderstorm')" title="Thunderstorm"><img class="icon normal" src="./img_magic/Thunderstorm.jpg"></button>
+        <button onclick="filter('tsunami')" title="Tsunami"><img class="icon normal" src="./img_magic/Tsunami.jpg"></button>
+        <button onclick="filter('')" title="Reset"><img class="icon normal" src="./img_magic/reset.jpg"></button>
+    </div>
+    <div style="margin-top: 50px;">
+        <table class="table table-striped table-hover" id="myTable">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Icon</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Base</th>
+                    <th scope="col">Strengthening</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="content thunderstorm meteor">
+                    <td><img src="./img_fusions/6.jpg" class="row_icon"></td>
+                    <td>Wrath of the Sky</td>
+                    <td>Thunderstorm (Lightning Blast)</td>
+                    <td>Meteor (Meteor Shower)</td>
+                    <td>Radius of Thunderstorm explosion gets wider but isn't extended. Thunderstorm damage x3. The number of Thunderstorms x3</td>
+                </tr>
+                <tr class="content spirit electric-shock">
+                    <td><img src="./img_fusions/7.jpg" class="row_icon"></td>
+                    <td>Flying Swords</td>
+                    <td>Spirit (Arcane Blade)</td>
+                    <td>Electric Shock (Chain Lightning)</td>
+                    <td>Spirit missile slashes the enemy quicker and gets longer in length. Spirit missile attacks nearby locations additionally 4 times. Spirit Damage x2</td>
+                </tr>
+                <tr class="content energy-bolt  spirit">
+                    <td><img src="./img_fusions/8.jpg" class="row_icon"></td>
+                    <td>Light Bolt Blast</td>
+                    <td>Energy Bolt (Charged Particles)</td>
+                    <td>Spirit (Familiar)</td>
+                    <td>Fires additional Energy Bolt missiles in all directions - 2 at a time. Energy Bolt missile continues to move forwards. Energy Bolt Damage x3. The number of Energy Bolts increases by 80%. Energy Bolt's Duration increases by 80%.</td>
+                </tr>
+                <tr class="content arcane-ray  electric-shock">
+                    <td><img src="./img_fusions/9.jpg" class="row_icon"></td>
+                    <td>Tera Current</td>
+                    <td>Arcane Ray (Electromagnetic Discharge)</td>
+                    <td>Electric Shock (Superconductivity)</td>
+                    <td>Arcane Ray's attack range increases. Arcane Ray switches to different directions at 0.5 sec intervals. Arcane Ray Damage x3.3; Arcane Ray's Cooldown reduces by 50%.</td>
+                </tr>
+                <tr class="content meteor  blizzard">
+                    <td><img src="./img_fusions/10.jpg" class="row_icon"></td>
+                    <td>War Climate </td>
+                    <td>Meteor (Meteor Shower)</td>
+                    <td>Blizzard (Shooting Star)</td>
+                    <td>Meteor's Cooldown becomes faster in proportion to the number of Meteors. Its Spawn Interval becomes the same as its Cooldown. Cooldown is reduced by 0~80% for every Meteor. Meteor Damage x3.3</td>
+                </tr>
+                <tr class="content fireball energy-bolt">
+                    <td><img src="./img_fusions/11.jpg" class="row_icon"></td>
+                    <td>Demon Equation</td>
+                    <td>Fireball (Great Explosion)</td>
+                    <td>Energy Bolt (Flare)</td>
+                    <td>Fireballs shot sequentially at random locations. Fireballs Penetrate all enemies. They only cause Explosions when they dissapear. Damage increases by 50% per 1 Fireball's Penetration. Fireball explosion Damage x3. The number of Fireball castings 
+                    +8. Fireball's cooldown +1 sec.</td>
+                </tr>
+                <tr class="content flash-shock magic-bolt">
+                    <td><img src="./img_fusions/12.jpg" class="row_icon"></td>
+                    <td>Frenzy</td>
+                    <td>Flash Shock (Devil's Nail)</td>
+                    <td>Magic Bolt (Spray)</td>
+                    <td>Flash Shocks are spawned more quickly and last longer. The number of casts Overlapping Resets every 9 times. Flash Shock Damage Increases by 50% Flash Shock's Cooldown reduces by 50%</td>
+                </tr>
+                <tr class="content fireball  satellite">
+                    <td><img src="./img_fusions/13.jpg" class="row_icon"></td>
+                    <td>Pandaemonium </td>
+                    <td>Fireball (Constellation)</td>
+                    <td>Satellite (Will-o-the-wisp)</td>
+                    <td>The Fireball penetrates all enemies and moves randomly. Instead of hitting the Fireball causes Explosions every 1.2 sec. Increases damage by 50% per Fireball penetration 1. Fireball Damage x3. Fireball's Duration increases by 50%. Fireball's size reduces by 20%.</td>
+                </tr>
+                <tr class="content energy-bolt  shield">
+                    <td><img src="./img_fusions/14.jpg" class="row_icon"></td>
+                    <td>Reaction</td>
+                    <td>Energy Bolt (Spark)</td>
+                    <td>Shield (Destruction Field)</td>
+                    <td>Energy Bolts do not multi-hit. Explosion occurs whenever Energy Bolts collide. (delay 0.5 seconds). Energy Bolt Damage x3</td>
+                </tr>
+                <tr class="content cyclone  satellite">
+                    <td><img src="./img_fusions/15.jpg" class="row_icon"></td>
+                    <td>Vortex</td>
+                    <td>Cyclone (Void)</td>
+                    <td>Satellite (Antigravity)</td>
+                    <td>A Cyclone is created near the character and rotates. The size of the Cyclone gradually shrinks. Cyclone damage x6. Cyclone's duration x9. Cyclone's Cooldown reduces by 50%.</td>
+                </tr>
+                <tr class="content incineration arcane-ray">
+                    <td><img src="./img_fusions/16.jpg" class="row_icon"></td>
+                    <td>Breath of Fire</td>
+                    <td>Incineration (Cerberus Flame)</td>
+                    <td>Arcane Ray (Reflection)</td>
+                    <td>Instead of firing sideways Incineration fires in five directions centered on the character. Incineration spawns faster and further away. Incineration Damage x4. The number of Incineration increases by 50%.</td>
+                </tr>
+                <tr class="content blizzard  incineration">
+                    <td><img src="./img_fusions/17.jpg" class="row_icon"></td>
+                    <td>Ether Fire</td>
+                    <td>Blizzard (Blaze)</td>
+                    <td>Incineration (Flame Strike)</td>
+                    <td>The number of consecutive explosions of Blizzard increases by 1 and Power does not decrease with each explosion. Location changes every time the Blizzard explodes.Blizzard Damage x4. 20% reduced Blizzard spawn interval.</td>
+                </tr>
+                <tr class="content thunderstorm  blizzard">
+                    <td><img src="./img_fusions/18.jpg" class="row_icon"></td>
+                    <td>Orbital Bombing</td>
+                    <td>Thunderstorm (Judgement)</td>
+                    <td>Blizzard (Shooting Star)</td>
+                    <td>Thunderstorms do not damage nearby enemies but instead expand. Thunderstorms are created continuously 3 times at random 
+                    locations. Thunderstorm Damage Increases by 100%. Thunderstorm's Cooldown reduces by 50%.</td>
+                </tr>
+                <tr class="content cyclone  satellite">
+                    <td><img src="./img_fusions/19.jpg" class="row_icon"></td>
+                    <td>Neutron Generation</td>
+                    <td>Cyclone (Electric Orb)</td>
+                    <td>Satellite (Nuclear Fusion)</td>
+                    <td>Cyclones are integrated into one. Cyclone does not fire projectiles but quickly expands in size and its speed gradually 
+                    decreases. Size increases by 25% per number of Cyclones. Cyclone Damage x7. Cyclone cooldown is doubled</td>
+                </tr>
+                <tr class="content blizzard  fireball">
+                    <td><img src="./img_fusions/20.jpg" class="row_icon"></td>
+                    <td>Winter Storm</td>
+                    <td>Blizzard (Cold Weather)</td>
+                    <td>Fireball (Poison Gas)</td>
+                    <td>The Blizzard explosion expands and deals 3 times damage. Blizzard Damage x2. Blizzard Size x2; 50% reduced number of Blizzards.</td>
+                </tr>
+                <tr class="content arcane-ray satellite">
+                    <td><img src="./img_fusions/21.jpg" class="row_icon"></td>
+                    <td>Plasma Beam</td>
+                    <td>Arcane Ray (Destruction Ray)</td>
+                    <td>Satellite (Nuclear Fusion)</td>
+                    <td>Arcane Rays are fixed to 4 and become permanent. Damage amount increases in proportion to the duration of the Arcane Ray and rotation speed increases in proportion to cooldown. Increases damage by 1x per number of Arcane Rays. 50% increased Arcane Ray size.</td>
+                </tr>
+                <tr class="content thunderstorm  electric-shock">
+                    <td><img src="./img_fusions/22.jpg" class="row_icon"></td>
+                    <td>Lightning Blast</td>
+                    <td>Thunderstorm (A Bolt from the Blue)</td>
+                    <td>Electric Shock (Chain Lightning)</td>
+                    <td>Thunderstorms 3-5 consecutively to different targets. Thunderstorm Damage x6</td>
+                </tr>
+                <tr class="hidden shield armageddon" id="hiddenRow">
+                    <td><img src="./img_fusions/23.jpg" class="row_icon"></td>
+                    <td>Quantum Explosion </td>
+                    <td>Shield (Destruction Field)</td>
+                    <td>Armageddon (Apocalypse)</td>
+                    <td>Instead of charging the Shield it creates a large explosion. Damage and Size increase by 20% per maximum amount of Shields. Shield's cooldown reduces by 40%</td>
+                </tr>
+                <tr class="content incineration  lava-zone">
+                    <td><img src="./img_fusions/24.jpg" class="row_icon"></td>
+                    <td>Inferno</td>
+                    <td>Incineration (Flame Strike)</td>
+                    <td>Lava Zone (Melting)</td>
+                    <td>Increases the maximum power of Incineration. (Max. Multiplier: Damage x12 - Size x2)" Incineration Damage increases by 50%. The number of Incinerations increases by 30%.</td>
+                </tr>
+                <tr class="content electric-zone  satellite">
+                    
+                    <td><img src="./img_fusions/25.jpg" class="row_icon"></td>
+                    <td>Lightning Attunement </td>
+                    <td>Electric Zone (Discharge)</td>
+                    <td>Satellite (Will-o'-the-wisp)</td>
+                    <td>The Electric Zone rotates in the form of multiple projectiles. The damage interval disappears but the rotation speed increases. Electric Zone Damage x9. Electric Zone's Size increases by 30%.</td>
+                </tr>
+                <tr class="content lava-zone  meteor">
+                    <td><img src="./img_fusions/26.jpg" class="row_icon"></td>
+                    <td>Blast Furnace</td>
+                    <td>Lava Zone (Magma Eruption)</td>
+                    <td>Meteor (Volcanic Eruption)</td>
+                    <td>The Lava Zone gradually expands in size. Damage increases in proportion to the size of the Lava Zone. Lava Zone Damage x5. Lava Zone's Duration increases by 30%.</td>
+                </tr>
+                <tr class="content electric-shock  spirit">
+                    <td><img src="./img_fusions/27.jpg" class="row_icon"></td>
+                    <td>Runaway Electricity</td>
+                    <td>Electric Shock (Chain Lightning)</td>
+                    <td>Spirit (Familiar)</td>
+                    <td>Electric Shocks are not chained but are generated continuously 1-7 times. Electric Shock range increases. Electric Shock Damage x6.</td>
+                </tr>
+                <tr class="content tsunami  cyclone">
+                    <td><img src="./img_fusions/28.jpg" class="row_icon"></td>
+                    <td>Deluge</td>
+                    <td>Tsunami (Siren Song)</td>
+                    <td>Cyclone (Climate Change)</td>
+                    <td>A Tsunami is created on each side of the wave by two additional waves. Tsunamis are constantly created behind the character. Tsunami Damage x6. Tsunami's Cooldown x2.2.</td>
+                    </tr>
+                <tr class="content frost-nova  tsunami">
+                    <td><img src="./img_fusions/29.jpg" class="row_icon"></td>
+                    <td>Blooming Snowflakes</td>
+                    <td>Frost Nova (Ice Age)</td>
+                    <td>Tsunami (Pole)</td>
+                    <td>Frost Nova explodes 20 times in a row at nearby enemies reducing Damage and Size by 3% per explosion. Frost Nova Damage x8. Frost Nova's Cooldown reduces by 20%.</td>
+                </tr>
+                <tr class="content cyclone  magic-bolt">
+                    <td><img src="./img_fusions/30.jpg" class="row_icon"></td>
+                    <td>Master of Storms</td>
+                    <td>Cyclone (Climate Change)</td>
+                    <td>Magic Bolt (Spray)</td>
+                    <td>Cyclones are created in all directions. Cyclone's Expansion Speed gradually increases. Cyclone's Movement Speed gradually decreases. Cyclone Damage x5. The number of Cyclones +3. Cyclone's Duration reduces by 20%.</td>
+                </tr>
+                <tr class="content magic-circle">
+                    <td><img src="./img_fusions/31.jpg" class="row_icon"></td>
+                    <td>Overmind </td>
+                    <td>Intelligence </td>
+                    <td>Magic Circle (Arch Magic Circle)</td>
+                    <td>Only Combination Magic (i.e. fusions) is cast. The following stats are enhanced for each level of Active Magic acquired: Attack power increased by 1.5%; All magic size increased by 0.5%; All magic cooldowns reduced by 0.3%  </td>
+                </tr>
+                <tr class="content magic-circle">
+                    <td><img src="./img_fusions/32.jpg" class="row_icon"></td>
+                    <td>Infinite Power </td>
+                    <td>Magic Circle (Arcane Release) + Intelligence</td>
+                    <td>2 Magic Combinations (i.e. fusions) </td>
+                    <td>Only Normal Magic is cast. The magic circle permanently lasts. Effect amount increases by 1.35% per magic circle duration 1% and Magic release efficiency increases by 0.25% per cooldown reduction 1%. </td>
+                </tr>
+                <tr class="content magic-circle">
+                    <td><img src="./img_fusions/33.jpg" class="row_icon"></td>
+                    <td>Door of Creation</td>
+                    <td>Intelligence </td>
+                    <td>Magic Circle (Material Transmutation)</td>
+                    <td>The Material magic (i.e. consumed, not base) that was exhausted from the previous Combination Magic is (Activated) again. Attack power increased by 30%.</td>
+                </tr>
+                <tr class="content ">
+                    <td><img src="./img_fusions/34.jpg" class="row_icon"></td>
+                    <td>Origin Explosion </td>
+                    <td>Energy Bolt (Flare) </td>
+                    <td>Fireball (Constellation) </td>
+                    <td>An energy bullet is created and fixed near the character. Energy bullets deal damage only when Explosion. Damage amount increases in propoertion to the energy bullet duration. Energy bullet duration increased by 3x. 100% increased energy grenade blast size. Reduces the number of energy bullets by 20%. </td>
+                </tr>
+                <tr class="content arcane-ray magic-bolt">
+                    <td><img src="./img_fusions/35.jpg" class="row_icon"></td>
+                    <td>Prism Spree</td>
+                    <td>Arcane Ray (Reflection)</td>
+                    <td>Magic Bolt (Spray)</td>
+                    <td>Instead of arcane beams spawning on the opposite side, they spawn simultaneously in random directions for 5 times in a row. Arcane beam damage increased by 6x. 35% reduced Arcane Beam duration. </td>
+                </tr>
+                <tr class="content frost-nova meteor">
+                    <td><img src="./img_fusions/36.jpg" class="row_icon"></td>
+                    <td>Great Rift</td>
+                    <td>Frost Nova (Earthquake) </td>
+                    <td>Meteor (Volcanic Eruption) </td>
+                    <td>All enemis hit by frost are knocked back. Frostbite damage increased by 5 times 50% increased Frostbite size. Increases frost blast cooldown by 50%.</td>
+                </tr>
+                <tr class="content satellite meteor">
+                    <td><img src="./img_fusions/37.jpg" class="row_icon"></td>
+                    <td>Two Suns</td>
+                    <td>Satellite (Nuclear Fusion) </td>
+                    <td>Meteor (Asteroid) </td>
+                    <td>A merged satellite spawns one more on the opposite side. Satellite damage increased by 50%. Increase satellite rotation speed by 30%. 10% reduction in satellite size. </td>
+                </tr>
+                <tr class="content magic-bolt spirit">
+                    <td><img src="./img_fusions/38.jpg" class="row_icon"></td>
+                    <td>Avatar</td>
+                    <td>Magic Bolt (Doppelganger)</td>
+                    <td>Spirit (Magic Missile)</td>
+                    <td>Summons 3 additional Phantoms that fire magic bullets. The number of magic bullets is fixed at 1. Damage increases by 33% per numer of magic bullets. Magic bullet damage increased by 6 times. Decrease magic bullet cooldown by 33%.</td>
+                </tr>
+                <tr class="content electric-shock energy-bolt">
+                    <td><img src="./img_fusions/39.jpg" class="row_icon"></td>
+                    <td>Heart of Lightning</td>
+                    <td>Electric Shock (Chain Lightning)</td>
+                    <td>Energy Bolt (Charged Particles)</td>
+                    <td>Each time the electric shock is chained, the projectile splits into (2). Chain speed of electric shock is increased. Electric shock damage increased by 5 times.</td>
+                </tr>
+            </tbody>
+    
+            </table>
+        </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.0/dist/bootstrap-table.min.js"></script>
+  </body>
+</html>
