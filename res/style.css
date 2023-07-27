@@ -1,6 +1,7 @@
-table#myTable{
-    overflow-x: auto;
-    overflow-y: auto;
+body{
+    height:100%;
+    overflow-x: scroll;
+    overflow: scroll;
 }
 body .icon {
     width: 40px;
@@ -37,7 +38,7 @@ body .main_container{
     align-self: center;
 }
 
-@media (max-width: 612px) {
+@media (max-width: 630px) {
     body .menu{
         position: fixed;
         margin-top: 0px;
@@ -45,6 +46,8 @@ body .main_container{
     body .main_container{
         position:fixed;
         margin-top: 135px;
+        height:100%;
+        overflow-y: scroll;
     }
   }
 
@@ -55,5 +58,9 @@ body .main_container{
     table#myTable td:first-child,
     table#myTable td:nth-child(0) ~ td {
     display: none;
+    }
+    body .main_container{
+        width:100%;
+        overflow-x: scroll;
     }
 }
