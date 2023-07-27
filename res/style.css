@@ -3,6 +3,11 @@ body .icon {
     height: 40px;
 }
 
+body .main_container{
+    border: solid;
+    margin-top: 50px;
+}
+
 .selected {
     border-radius: 20px;
     border-width: 20px;
@@ -26,4 +31,25 @@ body .icon {
     position: fixed;
     margin-top: -50px;
     align-self: center;
+}
+
+@media (max-width: 612px) {
+    body .menu{
+        position: fixed;
+        margin-top: 0px;
+    }
+    body .main_container{
+        position:fixed;
+        margin-top: 135px;
+    }
+  }
+
+@media (max-width:662px){
+    table#myTable #icon_th{
+        display: none;
+    }
+    table#myTable td:first-child,
+    table#myTable td:nth-child(0) ~ td {
+    display: none;
+    }
 }
