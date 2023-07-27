@@ -8,6 +8,10 @@ body .icon {
     height: 40px;
 }
 
+body .base{
+    background-color: #FFE194;
+}
+
 body .main_container{
     border: solid;
     margin-top: 50px;
@@ -39,13 +43,13 @@ body .main_container{
 }
 
 @media (max-width:662px){
-    table#myTable #icon_th{
+    /* table#myTable #icon_th{
         display: none;
     }
     table#myTable td:first-child,
     table#myTable td:nth-child(0) ~ td {
     display: none;
-    }
+    } */
     body .main_container{
         width:100%;
         overflow-x: scroll;
