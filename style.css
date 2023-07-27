@@ -1,0 +1,29 @@
+body .icon {
+    width: 40px;
+    height: 40px;
+}
+
+.selected {
+    border-radius: 20px;
+    border-width: 20px;
+    border-color: cyan;
+}
+
+.normal {
+    border-radius: 0;
+}
+
+.row_icon {
+    width: 90px;
+    height: 90px;
+}
+
+.menu {
+    /* center of page
+    fixed when scrolling 
+    */
+    background-color: lightsalmon;
+    position: fixed;
+    margin-top: -50px;
+    align-self: center;
+}
