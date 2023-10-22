@@ -9,7 +9,11 @@ body .icon {
 }
 
 body .base{
-    background-color: #FFE194;
+    background-color: #c0f5cc;
+}
+
+body .consumed{
+    background-color: #f8e5e9;
 }
 
 body .main_container{
